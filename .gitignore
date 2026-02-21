@@ -30,8 +30,13 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
-.env*
+# env files (contains secrets - add your own values)
+.env.local
+.env.production
+.env.development
+
+# Convex generated types (auto-generated)
+convex/_generated
 
 # vercel
 .vercel
