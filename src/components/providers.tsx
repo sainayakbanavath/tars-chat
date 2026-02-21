@@ -10,7 +10,6 @@ const convex = new ConvexReactClient(process.env.NEXT_PUBLIC_CONVEX_URL!);
 export function Providers({ children }: { children: ReactNode }) {
     return (
         <ClerkProvider
-            publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY!}
             appearance={{
                 variables: {
                     colorPrimary: "#6366f1",
@@ -21,7 +20,7 @@ export function Providers({ children }: { children: ReactNode }) {
                     borderRadius: "0.75rem",
                 },
                 elements: {
-                    card: "bg-[#1a1a2e] border border-slate-700",
+                    card: "bg-[#1a1a2e] border border-slate-700 shadow-2xl",
                     headerTitle: "text-slate-100",
                     headerSubtitle: "text-slate-400",
                     socialButtonsBlockButton:
@@ -30,8 +29,7 @@ export function Providers({ children }: { children: ReactNode }) {
                     formFieldInput:
                         "bg-[#0f0f23] border-slate-600 text-slate-100 focus:border-indigo-500",
                     footerActionLink: "text-indigo-400 hover:text-indigo-300",
-                    formButtonPrimary:
-                        "bg-indigo-600 hover:bg-indigo-500 text-white",
+                    formButtonPrimary: "bg-indigo-600 hover:bg-indigo-500 text-white",
                     dividerLine: "bg-slate-700",
                     dividerText: "text-slate-500",
                 },

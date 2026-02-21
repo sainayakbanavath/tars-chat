@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useQuery, useMutation } from "convex/react";
+import { useQuery } from "convex/react";
 import { useUser, UserButton } from "@clerk/nextjs";
 import { api } from "../../../convex/_generated/api";
 import { Id } from "../../../convex/_generated/dataModel";
@@ -9,14 +9,7 @@ import { ConversationItem } from "./conversation-item";
 import { UserSearch } from "./user-search";
 import { CreateGroupModal } from "./create-group-modal";
 import { ConversationSkeleton } from "@/components/ui/skeleton";
-import {
-    MessageSquare,
-    Search,
-    Users,
-    Plus,
-    X,
-    Settings,
-} from "lucide-react";
+import { MessageSquare, Search, Users, Plus, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface SidebarProps {

@@ -2,24 +2,15 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import { useQuery, useMutation } from "convex/react";
-import { useUser } from "@clerk/nextjs";
 import { api } from "../../../convex/_generated/api";
 import { Id } from "../../../convex/_generated/dataModel";
 import { UserAvatar } from "@/components/ui/user-avatar";
 import { MessageBubble } from "./message-bubble";
 import { MessageInput } from "./message-input";
 import { MessageSkeleton } from "@/components/ui/skeleton";
-import { formatMessageTime } from "@/lib/format";
-import {
-    ArrowLeft,
-    Phone,
-    Video,
-    MoreVertical,
-    MessageSquare,
-    ChevronDown,
-} from "lucide-react";
+
+import { ArrowLeft, Video, MoreVertical, MessageSquare, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
-import toast from "react-hot-toast";
 
 interface ChatAreaProps {
     conversationId: Id<"conversations"> | null;
@@ -34,7 +25,6 @@ export function ChatArea({
     onBack,
     isMobile,
 }: ChatAreaProps) {
-    const { user } = useUser();
     const messagesEndRef = useRef<HTMLDivElement>(null);
     const scrollAreaRef = useRef<HTMLDivElement>(null);
     const [isAtBottom, setIsAtBottom] = useState(true);
@@ -62,7 +52,7 @@ export function ChatArea({
 
     // Get other participant for DMs
     const participants = conversation?.participantIds ?? [];
-    const otherParticipantId = participants.find((id) => id !== currentUserId);
+    const otherParticipantId = participants.find((id: Id<"users">) => id !== currentUserId);
 
     const otherUser = useQuery(
         api.users.getUserById,
