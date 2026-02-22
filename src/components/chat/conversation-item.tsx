@@ -95,7 +95,7 @@ export function ConversationItem({
                     >
                         {displayName}
                     </p>
-                    <span className="text-xs text-slate-600 flex-shrink-0">
+                    <span className="text-xs text-slate-400 flex-shrink-0">
                         {formatConversationTime(conversation.lastMessageAt)}
                     </span>
                 </div>
@@ -104,7 +104,7 @@ export function ConversationItem({
                     <p
                         className={cn(
                             "text-xs truncate transition-colors",
-                            isSelected ? "text-indigo-300" : "text-slate-500"
+                            isSelected ? "text-indigo-300" : "text-slate-400"
                         )}
                     >
                         {lastMessagePreview}
