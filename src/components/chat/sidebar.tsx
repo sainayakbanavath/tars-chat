@@ -97,7 +97,7 @@ export function Sidebar({
                             }
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
-                            className="w-full bg-[#1a1a2e] border border-[#1e2a4a] rounded-xl pl-9 pr-9 py-2.5 text-sm text-slate-300 placeholder:text-slate-600 focus:outline-none focus:border-indigo-500/50 focus:bg-[#16213e] transition-all duration-200"
+                            className="w-full bg-[#1a1a2e] border border-[#2d3f69] rounded-xl pl-9 pr-9 py-2.5 text-sm text-slate-200 placeholder:text-slate-400 focus:outline-none focus:border-indigo-500 focus:bg-[#16213e] transition-all duration-200"
                         />
                         {searchQuery && (
                             <button

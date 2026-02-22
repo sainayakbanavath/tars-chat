@@ -185,7 +185,7 @@ export function ChatArea({
             <div
                 ref={scrollAreaRef}
                 onScroll={handleScroll}
-                className="flex-1 overflow-y-auto px-4 py-4 space-y-1"
+                className="flex-1 overflow-y-auto py-4"
             >
                 {messages === undefined ? (
                     <div className="flex flex-col gap-4 pt-2">
@@ -194,14 +194,14 @@ export function ChatArea({
                         ))}
                     </div>
                 ) : messages.length === 0 ? (
-                    <div className="flex flex-col items-center justify-center h-full text-center animate-fade-in">
+                    <div className="flex flex-col items-center justify-center h-full text-center animate-fade-in px-6">
                         <div className="w-20 h-20 rounded-3xl bg-gradient-to-br from-indigo-500/20 to-purple-600/20 border border-indigo-500/20 flex items-center justify-center mb-5">
                             <MessageSquare size={32} className="text-indigo-400" />
                         </div>
-                        <h3 className="text-slate-300 font-semibold mb-1">
+                        <h3 className="text-slate-200 font-semibold mb-2 text-lg">
                             No messages yet
                         </h3>
-                        <p className="text-slate-600 text-sm">
+                        <p className="text-slate-400 text-sm">
                             {conversation?.isGroup
                                 ? "Be the first to send a message to this group!"
                                 : `Say hello to ${displayName}! 👋`}
@@ -220,20 +220,20 @@ export function ChatArea({
                             return (
                                 <div key={message._id}>
                                     {showDateSeparator && (
-                                        <div className="flex items-center gap-3 my-4">
-                                            <div className="flex-1 h-px bg-[#1e2a4a]" />
-                                            <span className="text-xs text-slate-600 px-2 py-1 bg-[#1a1a2e] rounded-full">
+                                        <div className="flex items-center gap-3 my-5 px-4">
+                                            <div className="flex-1 h-px bg-[#2d3f69]" />
+                                            <span className="text-xs text-slate-400 px-3 py-1 bg-[#1a1a2e] border border-[#2d3f69] rounded-full font-medium">
                                                 {new Date(message.createdAt).toLocaleDateString(
                                                     "en-US",
                                                     {
                                                         weekday: "long",
-                                                        year: "numeric",
                                                         month: "long",
                                                         day: "numeric",
+                                                        year: "numeric",
                                                     }
                                                 )}
                                             </span>
-                                            <div className="flex-1 h-px bg-[#1e2a4a]" />
+                                            <div className="flex-1 h-px bg-[#2d3f69]" />
                                         </div>
                                     )}
 

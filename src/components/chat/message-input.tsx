@@ -108,7 +108,7 @@ export function MessageInput({
 
     return (
         <div className="px-4 pb-4 pt-2 bg-[#080818] flex-shrink-0">
-            <div className="relative flex items-end gap-2 bg-[#0f0f23] border border-[#1e2a4a] rounded-2xl p-2 focus-within:border-indigo-500/50 transition-all duration-200">
+            <div className="relative flex items-end gap-2 bg-[#0f0f23] border border-[#2d3f69] rounded-2xl p-2.5 focus-within:border-indigo-500 focus-within:bg-[#0f0f23] transition-all duration-200 shadow-lg">
                 {/* Emoji picker */}
                 <div className="relative">
                     <button
@@ -141,9 +141,9 @@ export function MessageInput({
                     value={message}
                     onChange={(e) => handleTyping(e.target.value)}
                     onKeyDown={handleKeyDown}
-                    placeholder="Type a message... (Enter to send, Shift+Enter for new line)"
+                    placeholder="Type a message..."
                     rows={1}
-                    className="flex-1 bg-transparent text-slate-200 placeholder:text-slate-600 text-sm resize-none focus:outline-none max-h-[120px] leading-relaxed py-1.5 px-1"
+                    className="flex-1 bg-transparent text-slate-100 placeholder:text-slate-400 text-sm resize-none focus:outline-none max-h-[120px] leading-relaxed py-1.5 px-2"
                 />
 
                 {/* Send button */}
@@ -160,7 +160,7 @@ export function MessageInput({
                     <Send size={16} className={isSending ? "animate-pulse" : ""} />
                 </button>
             </div>
-            <p className="text-xs text-slate-700 text-center mt-2">
+            <p className="text-xs text-slate-500 text-center mt-2">
                 Enter to send · Shift+Enter for new line
             </p>
         </div>
