@@ -35,8 +35,8 @@ yarn-error.log*
 .env.production
 .env.development
 
-# Convex generated types (auto-generated)
-convex/_generated
+# Convex generated types are committed so Vercel build works without running convex dev
+# convex/_generated  <-- do NOT ignore these
 
 # vercel
 .vercel
